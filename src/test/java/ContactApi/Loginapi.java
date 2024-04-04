@@ -33,8 +33,8 @@ public class Loginapi {
         RestAssured.basePath = "/contacts";
 
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"firstName\": \"summu\",\n" +
-                "    \"lastName\": \"sharma\",\n" +
+                "    \"firstName\": \"summunaz\",\n" +
+                "    \"lastName\": \"sharmaya\",\n" +
                 "    \"birthdate\": \"1970-01-01\",\n" +
                 "    \"email\": \"jdoe@fake.com\",\n" +
                 "    \"phone\": \"8005544555\",\n" +

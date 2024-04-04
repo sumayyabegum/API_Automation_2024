@@ -2,6 +2,7 @@ package ContactApi;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -15,8 +16,9 @@ public class AddUser {
         //https://thinking-tester-contact-list.herokuapp.com/users/login
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";
+        RestAssured.defaultParser= Parser.JSON;
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer2@fake.com\",\n" +
+                "    \"email\": \"timmer3@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
@@ -32,8 +34,8 @@ public class AddUser {
 
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("{\n" +
                 "    \"firstName\": \"Tesla\",\n" +
-                "    \"lastName\": \"User\",\n" +
-                "    \"email\": \"test@fake.com\",\n" +
+                "    \"lastName\": \"Users\",\n" +
+                "    \"email\": \"test1@fake.com\",\n" +
                 "    \"password\": \"myPassword\",\n" + "}").post();
         response.prettyPrint();
         System.out.println(response.getStatusCode());
