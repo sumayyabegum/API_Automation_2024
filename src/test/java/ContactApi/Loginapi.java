@@ -2,6 +2,7 @@ package ContactApi;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,7 @@ public class Loginapi {
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";//
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer3@fake.com\",\n" +
+                "    \"email\": \"timmer4@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
@@ -33,9 +34,9 @@ public class Loginapi {
         RestAssured.basePath = "/contacts";
 
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"firstName\": \"summunaz\",\n" +
+                "    \"firstName\": \"suman\",\n" +
                 "    \"lastName\": \"sharmaya\",\n" +
-                "    \"birthdate\": \"1970-01-01\",\n" +
+                "    \"birthdate\": \"1972-01-01\",\n" +
                 "    \"email\": \"jdoe@fake.com\",\n" +
                 "    \"phone\": \"8005544555\",\n" +
                 "    \"street1\": \"1 Main St.\",\n" +

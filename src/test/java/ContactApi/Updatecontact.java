@@ -16,7 +16,7 @@ public class Updatecontact {
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";//
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer3@fake.com\",\n" +
+                "    \"email\": \"timmer4@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
@@ -31,11 +31,11 @@ public class Updatecontact {
         RestAssured.basePath = "/contacts/";
 
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"firstName\": \"sana\",\n" +
-                "    \"lastName\": \"shishi\",\n" +
-                "    \"birthdate\": \"1970-01-01\",\n" +
+                "    \"firstName\": \"sumaniya MIRZA\",\n" +
+                "    \"lastName\": \"shishira\",\n" +
+                "    \"birthdate\": \"1973-01-01\",\n" +
                 "    \"email\": \"jdoe@fake.com\",\n" +
-                "    \"phone\": \"8115544555\",\n" +
+                "    \"phone\": \"8115522555\",\n" +
                 "    \"street1\": \"1 Main St.\",\n" +
                 "    \"street2\": \"Apartment A\",\n" +
                 "    \"city\": \"Anytown\",\n" +

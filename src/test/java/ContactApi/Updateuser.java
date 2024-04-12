@@ -15,7 +15,7 @@ public class Updateuser {
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer2@fake.com\",\n" +
+                "    \"email\": \"timmer4@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
@@ -31,7 +31,7 @@ public class Updateuser {
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("\n" +
                 "    \"firstName\": \"Updated\",\n" +
                 "    \"lastName\": \"Username\",\n" +
-                "    \"email\": \"test@fake.com\",\n" +
+                "    \"email\": \"test1@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").patch();
         response.prettyPrint();

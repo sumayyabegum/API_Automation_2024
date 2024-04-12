@@ -18,7 +18,7 @@ public class AddUser {
         RestAssured.basePath = "/users/login";
         RestAssured.defaultParser= Parser.JSON;
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer3@fake.com\",\n" +
+                "    \"email\": \"timmer4@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
@@ -33,7 +33,7 @@ public class AddUser {
         RestAssured.basePath = "/users";
 
         Response response = given().header("Authorization", "Bearer " + token).contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"firstName\": \"Tesla\",\n" +
+                "    \"firstName\": \"Testing\",\n" +
                 "    \"lastName\": \"Users\",\n" +
                 "    \"email\": \"test1@fake.com\",\n" +
                 "    \"password\": \"myPassword\",\n" + "}").post();

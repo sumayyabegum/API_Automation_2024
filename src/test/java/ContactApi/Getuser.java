@@ -5,6 +5,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+
 import static io.restassured.RestAssured.given;
 
 public class Getuser {
@@ -15,10 +17,12 @@ public class Getuser {
         //https://thinking-tester-contact-list.herokuapp.com/users/login
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";
-        Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer3@fake.com\",\n" +
-                "    \"password\": \"myPassword\"\n" +
-                "}").post();
+
+
+        HashMap map=new HashMap<>();
+        map.put("email","timmer4@fake.com");
+        map.put("password","myPassword");
+        Response resp = given().contentType(ContentType.JSON).log().all().body(map).post();
         token = resp.then().extract().path("token");
 
         System.out.println("TOKEN: " + token);

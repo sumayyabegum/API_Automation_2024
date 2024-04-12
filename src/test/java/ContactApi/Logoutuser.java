@@ -15,7 +15,7 @@ public class Logoutuser {
         RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
         RestAssured.basePath = "/users/login";
         Response resp = given().contentType(ContentType.JSON).log().all().body("{\n" +
-                "    \"email\": \"timmer3@fake.com\",\n" +
+                "    \"email\": \"timmer4@fake.com\",\n" +
                 "    \"password\": \"myPassword\"\n" +
                 "}").post();
         token = resp.then().extract().path("token");
