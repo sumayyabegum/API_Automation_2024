@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Maahi/IdeaProjects/API_Automation_2024/src/test/java/PojoClass">
+        <classes>
+            <class name="PojoClass.ADD_User"/>
+            <class name="PojoClass.Get_Contacts"/>
+            <class name="PojoClass.Get_Users"/>
+            <class name="PojoClass.Logout_User"/>
+            <class name="PojoClass.TC_Add_Contacts"/>
+            <class name="PojoClass.TC_Delete"/>
+            <class name="PojoClass.TC_Delete_Users"/>
+            <class name="PojoClass.Update_Contacts"/>
+        </classes>
+    </test>
+</suite>
